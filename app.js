@@ -60,10 +60,12 @@ getId("num-pad").addEventListener("click", () => {
   let provideNumbers = (inputBox.value).length;
   if ((provideNumbers < 4) && (numbers.indexOf(buttonText) !== -1)) {
     inputBox.value += buttonText;
-  } else if (buttonText === "<") {
+  }
+  else if (buttonText === "<") {
     const displayAfterRemove = (inputBox.value).slice(0, (provideNumbers - 1));
     inputBox.value = displayAfterRemove;
-  } else if (buttonText === "C") {
+  }
+  else if (buttonText === "C") {
     inputBox.value = '';
   }
 });
@@ -77,14 +79,17 @@ getId("submit-pin-btn").addEventListener("click", () => {
 
   if (generatedPin.length === 0) {
     wantDisplayBlock("warning", true);
-  } else if (generatedPin === inputPin) {
+  }
+  else if (generatedPin === inputPin) {
     wantDisplayBlock("correct", true);
     // generatedPin = '';
     getId("generate-pin-box").value = '';
     // inputPin = '';
     getId("input-box").value = '';
     getId("left-count").style.display = "none";
-  } else if (generatedPin !== inputPin) {
+    pinNumber = '';
+  }
+  else if (generatedPin !== inputPin) {
     wantDisplayBlock("wrong", true);
     // inputPin = '';
     getId("input-box").value = '';
@@ -94,6 +99,7 @@ getId("submit-pin-btn").addEventListener("click", () => {
       getId("submit-pin-btn").disabled = true;
       getId("wrong").innerText = "❌ You can't access";
       getId("generate-pin-box").value = '';
+      pinNumber = '';
     }
   }
 });
