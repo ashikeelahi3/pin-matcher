@@ -107,4 +107,3 @@ getId("submit-pin-btn").addEventListener("click", () => {
 // <<< Anyone can't modify the generating pin >>>
 getId("generate-pin-box").addEventListener("input", () => getId("generate-pin-box").value = pinNumber || '');
 
-
